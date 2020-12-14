@@ -13,7 +13,7 @@ function sendEmail(report) {
   const message = {
     from: process.env.USERNAME, // Sender address
     to: 'kalyanikawale@gmail.com', // List of recipients
-    subject: 'Daily Transactions', // Subject line
+    subject: 'Daily Transaction Report', // Subject line
     text: messageText,
     attachments: [{
       filename: 'DailyTransactions.csv',

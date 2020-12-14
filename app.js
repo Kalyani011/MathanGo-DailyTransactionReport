@@ -47,7 +47,7 @@ report.numberOfSuccessfulTransactions = 0;
 report.volumeInINR = 0;
 
 app.get("/", (req, res) => {
-  if (time(new Date) === "10:17 pm") {
+  if (time(new Date) === "11:27 pm") {
     Order.find((err, orders) => {
       if(!err){
         let transactions = [];
