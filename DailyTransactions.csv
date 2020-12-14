@@ -1,0 +1,5 @@
+sl_no,order_id,payment_id,createdAt,updatedAt,item_id,item_name,coupon,amount,paid_status,phone,email,utm_params_source,utm_params_medium,utm_params_campaign,utm_params_term
+1,'-Scn3Xatt,276159121,Mon Dec 14 2020 21:28:05 GMT+0530 (India Standard Time),Mon Dec 14 2020 21:28:05 GMT+0530 (India Standard Time),2z0pe61iQ,Milk,OFF50,4000,true,1234567890,john.doe@email.com,google,seo_pages,sale,
+2,'-Scn3Xbtt,276159122,Mon Dec 14 2020 21:28:48 GMT+0530 (India Standard Time),Mon Dec 14 2020 21:28:48 GMT+0530 (India Standard Time),2z0pe61iS,Sugar,OFF30,2000,true,1234567891,jane.doe@email.com,google,seo_pages,sale,
+3,'-Scn3Xctt,276159123,Mon Dec 14 2020 21:29:35 GMT+0530 (India Standard Time),Mon Dec 14 2020 21:29:35 GMT+0530 (India Standard Time),2z0pe61iR,Tea,OFF30,3000,false,1234567891,jane.doe@email.com,google,seo_pages,sale,
+4,'-Scn3Xdtt,276159124,Mon Dec 14 2020 21:31:18 GMT+0530 (India Standard Time),Mon Dec 14 2020 21:31:18 GMT+0530 (India Standard Time),2z0pe61iR,Tea,OFF30,2000,true,1234567891,jane.doe@email.com,google,seo_pages,sale,
