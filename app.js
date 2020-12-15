@@ -47,25 +47,41 @@ report.numberOfSuccessfulTransactions = 0;
 report.volumeInINR = 0;
 
 app.get("/", (req, res) => {
-  if (time(new Date) === "11:27 pm") {
-    Order.find((err, orders) => {
-      if(!err){
-        let transactions = [];
-        orders.forEach((order) => {
+
+  if (time(new Date) === "12:30 am") {
+  let currentDate = new Date().toISOString();
+  let previousDate = new Date(new Date().setDate(new Date().getDate() - 2)).toISOString();
+
+  Order.find({
+    $and: [{
+      createdAt: {
+        $lt: currentDate
+      }
+    }, {
+      createdAt: {
+        $gt: previousDate
+      }
+    }]
+  }, (err, orders) => {
+    if (!err) {
+      let transactions = [];
+      orders.forEach((order) => {
+        if (new Date(order.createdAt).toISOString().split("T")[0] !== currentDate.split("T")[0]) {
           report.numberOfTransactions++;
           if (order.paid) {
             report.numberOfSuccessfulTransactions++;
           }
           report.volumeInINR += order.amount;
           transactions.push(records.createRecord(order, report.numberOfTransactions));
-        });
-        records.writeRecords(transactions);
-        email(report);
-        res.send("Transaction report generated and emailed Successfully!");
-      }else{
-        res.send(err);
-      }
-    });
+        }
+      });
+      records.writeRecords(transactions);
+      email(report);
+      res.send("Transaction report generated and emailed Successfully!");
+    } else {
+      res.send(err);
+    }
+  });
   }
 });
 
